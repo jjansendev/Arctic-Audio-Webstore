@@ -1,2 +1,2 @@
-# Arctic-Audio-Webstore
-Audio vst webstore
+# Arctic Audio Project
+This is a placeholder. Replace with full content.
