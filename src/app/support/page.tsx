@@ -81,7 +81,7 @@ export default function SupportPage() {
           <p className="text-white/70 mb-6">
             Can&apos;t find what you&apos;re looking for? Send us a message and we&apos;ll get back to you within 24 hours.
           </p>
-          <form className="space-y-4">
+          <form className="space-y-4" onSubmit={(e) => { e.preventDefault(); alert('Contact form submitted! In production, this would send an email.'); }}>
             <div className="grid gap-4 md:grid-cols-2">
               <input
                 type="text"
@@ -108,7 +108,9 @@ export default function SupportPage() {
               className="w-full rounded-panel border border-white/10 bg-black/30 px-4 py-3 text-sm text-white placeholder:text-white/40"
               aria-label="Message"
             />
-            <GlowButton href="#" label="Send Message" />
+            <button type="submit" className="btn-primary">
+              Send Message
+            </button>
           </form>
         </div>
       </div>

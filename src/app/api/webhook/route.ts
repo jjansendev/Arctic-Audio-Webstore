@@ -66,9 +66,17 @@ export async function POST(request: NextRequest) {
       console.log(`Order received: ${session.id} for ${email}`);
       console.log(`Amount: ${session.amount_total} ${session.currency}`);
       
-      // TODO: Send email with download link and license key
+      // TODO: Implement email delivery before production
+      // Send order confirmation email with download links and license keys
+      // Example:
       // const licenseKey = generateLicenseKey();
-      // await sendOrderConfirmationEmail(email, order, token, licenseKey);
+      // const resend = new Resend(process.env.RESEND_API_KEY);
+      // await resend.emails.send({
+      //   from: process.env.RESEND_FROM_EMAIL,
+      //   to: email,
+      //   subject: 'Your Arctic Audio Order',
+      //   html: `Your order ${session.id} is confirmed. License: ${licenseKey}`
+      // });
     }
 
     return NextResponse.json({ received: true });

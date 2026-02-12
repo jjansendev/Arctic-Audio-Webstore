@@ -1,5 +1,6 @@
 import { type ClassValue, clsx } from "clsx";
 import { twMerge } from "tailwind-merge";
+import crypto from "crypto";
 
 export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
@@ -22,7 +23,9 @@ export function generateLicenseKey(): string {
   for (let i = 0; i < segments; i++) {
     let segment = "";
     for (let j = 0; j < segmentLength; j++) {
-      segment += chars[Math.floor(Math.random() * chars.length)];
+      // Use crypto.randomInt for cryptographically secure random numbers
+      const randomIndex = crypto.randomInt(0, chars.length);
+      segment += chars[randomIndex];
     }
     result.push(segment);
   }
@@ -31,26 +34,11 @@ export function generateLicenseKey(): string {
 }
 
 export function generateDownloadToken(): string {
-  // Generate a secure random token
-  const chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
-  let token = "";
-  for (let i = 0; i < 32; i++) {
-    token += chars[Math.floor(Math.random() * chars.length)];
-  }
-  return token;
+  // Generate a cryptographically secure random token
+  return crypto.randomBytes(32).toString("hex");
 }
 
 export async function hashToken(token: string): Promise<string> {
-  // Simple hash for token storage (in production, use crypto.subtle.digest)
-  const encoder = new TextEncoder();
-  const data = encoder.encode(token);
-  
-  if (typeof crypto !== "undefined" && crypto.subtle) {
-    const hashBuffer = await crypto.subtle.digest("SHA-256", data);
-    const hashArray = Array.from(new Uint8Array(hashBuffer));
-    return hashArray.map((b) => b.toString(16).padStart(2, "0")).join("");
-  }
-  
-  // Fallback for environments without crypto.subtle
-  return Buffer.from(token).toString("base64");
+  // Use Node's built-in crypto for secure hashing
+  return crypto.createHash("sha256").update(token).digest("hex");
 }

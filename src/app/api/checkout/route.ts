@@ -37,7 +37,6 @@ export async function POST(request: NextRequest) {
           product_data: {
             name: product.name,
             description: product.description,
-            images: product.demoUrl ? [product.demoUrl] : [],
           },
           unit_amount: product.price * 100,
         },
