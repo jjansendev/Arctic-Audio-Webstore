@@ -18,7 +18,7 @@ body {
 
 body {
   margin: 0;
-  font-family: var(--font-sans), ui-sans-serif, system-ui, -apple-system, sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   background: linear-gradient(140deg, #0a0f14 0%, #0f1c26 45%, #111e2e 100%);
   color: #e7f6ff;
   letter-spacing: -0.01em;
