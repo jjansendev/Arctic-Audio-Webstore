@@ -8,18 +8,21 @@ export default function Header() {
           ARCTIC AUDIO
         </Link>
         <nav className="hidden items-center gap-8 text-xs uppercase tracking-[0.3em] text-white/60 md:flex">
+          <Link href="/shop" className="transition hover:text-white">
+            Shop
+          </Link>
           <Link href="/products" className="transition hover:text-white">
             Plugins
           </Link>
-          <Link href="/checkout" className="transition hover:text-white">
-            Checkout
+          <Link href="/support" className="transition hover:text-white">
+            Support
           </Link>
           <Link href="/account" className="transition hover:text-white">
             Account
           </Link>
         </nav>
         <Link
-          href="/products"
+          href="/shop"
           className="rounded-full border border-white/10 px-5 py-2 text-xs uppercase tracking-[0.35em] text-white/70 transition hover:border-white/30 hover:text-white"
         >
           Explore

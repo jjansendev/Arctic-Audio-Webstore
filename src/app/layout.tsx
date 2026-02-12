@@ -1,10 +1,7 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-
-const inter = Inter({ subsets: ["latin"], variable: "--font-sans" });
 
 export const metadata: Metadata = {
   title: {
@@ -12,7 +9,7 @@ export const metadata: Metadata = {
     template: "%s | Arctic Audio"
   },
   description: "Premium boutique VST plugins engineered for pristine clarity and musical depth.",
-  metadataBase: new URL("https://arcticaudio.example"),
+  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || "https://arcticaudio.example"),
   openGraph: {
     title: "Arctic Audio",
     description: "Precision in Every Frequency.",
@@ -22,7 +19,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={inter.variable}>
+    <html lang="en">
       <body>
         <div className="relative min-h-screen overflow-hidden">
           <Header />
