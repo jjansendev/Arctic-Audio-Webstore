@@ -1,0 +1,79 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+model Product {
+  id            String      @id @default(cuid())
+  slug          String      @unique
+  name          String
+  tagline       String?
+  description   String      @db.Text
+  priceCents    Int
+  currency      String      @default("usd")
+  categories    String[]
+  formats       String[]    // VST3, AU, AAX
+  os            String[]    // Windows, macOS
+  heroImage     String?
+  galleryImages String[]
+  isBundle      Boolean     @default(false)
+  createdAt     DateTime    @default(now())
+  updatedAt     DateTime    @updatedAt
+  
+  orderItems    OrderItem[]
+  
+  @@index([slug])
+  @@index([isBundle])
+}
+
+model Order {
+  id                    String      @id @default(cuid())
+  stripeSessionId       String?     @unique
+  stripePaymentIntentId String?     @unique
+  email                 String
+  status                String      @default("pending") // pending, paid, fulfilled, failed
+  totalCents            Int
+  currency              String      @default("usd")
+  createdAt             DateTime    @default(now())
+  updatedAt             DateTime    @updatedAt
+  
+  items                 OrderItem[]
+  downloadTokens        DownloadToken[]
+  
+  @@index([email])
+  @@index([status])
+  @@index([stripeSessionId])
+}
+
+model OrderItem {
+  id            String   @id @default(cuid())
+  orderId       String
+  productId     String
+  qty           Int      @default(1)
+  unitPriceCents Int
+  
+  order         Order    @relation(fields: [orderId], references: [id], onDelete: Cascade)
+  product       Product  @relation(fields: [productId], references: [id])
+  
+  @@index([orderId])
+  @@index([productId])
+}
+
+model DownloadToken {
+  id        String   @id @default(cuid())
+  orderId   String
+  tokenHash String   @unique
+  expiresAt DateTime
+  createdAt DateTime @default(now())
+  
+  order     Order    @relation(fields: [orderId], references: [id], onDelete: Cascade)
+  
+  @@index([tokenHash])
+  @@index([expiresAt])
+}

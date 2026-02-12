@@ -8,6 +8,8 @@ export type Product = {
   system: string[];
   license: string[];
   demoUrl?: string;
+  isBundle?: boolean;
+  bundleProducts?: string[]; // slugs of products in bundle
 };
 
 export const products: Product[] = [
@@ -92,20 +94,57 @@ export const products: Product[] = [
     demoUrl: "/audio/frost-limiter-demo.mp3"
   },
   {
+    name: "Tundra Stereo",
+    slug: "tundra-stereo",
+    description: "Precision stereo imaging with mid-side processing and width control.",
+    price: 139,
+    category: "Stereo",
+    features: [
+      "Advanced mid-side processing",
+      "Stereo width analyzer",
+      "Phase correlation metering",
+      "Mono compatibility check"
+    ],
+    system: ["macOS 12+", "Windows 10+", "VST3 / AU / AAX"],
+    license: ["Single-user perpetual", "2 activations"],
+    demoUrl: "/audio/tundra-stereo-demo.mp3"
+  },
+  {
     name: "Arctic Suite",
     slug: "arctic-suite",
-    description: "Flagship collection built for mastering-grade clarity.",
-    price: 399,
+    description: "Complete mastering chain with all Arctic Audio processors.",
+    price: 599,
     category: "Bundle",
+    isBundle: true,
+    bundleProducts: ["arctic-echo", "glacier-reverb", "polar-dynamics", "aurora-eq", "frost-limiter", "tundra-stereo"],
     features: [
-      "Full signal chain modules",
+      "All 6 Arctic Audio plugins",
       "Unified preset system",
       "Advanced metering suite",
-      "Cross-plugin recall"
+      "Cross-plugin recall",
+      "Priority support included"
     ],
     system: ["macOS 12+", "Windows 10+", "VST3 / AU / AAX"],
     license: ["Single-user perpetual", "Priority support"],
     demoUrl: "/audio/arctic-suite-demo.mp3"
+  },
+  {
+    name: "Midnight Studio Bundle",
+    slug: "midnight-studio-bundle",
+    description: "Essential mixing trio for pristine clarity and depth.",
+    price: 349,
+    category: "Bundle",
+    isBundle: true,
+    bundleProducts: ["aurora-eq", "polar-dynamics", "glacier-reverb"],
+    features: [
+      "Aurora EQ + Polar Dynamics + Glacier Reverb",
+      "Integrated workflow presets",
+      "Save 25% vs individual purchase",
+      "Lifetime updates"
+    ],
+    system: ["macOS 12+", "Windows 10+", "VST3 / AU / AAX"],
+    license: ["Single-user perpetual", "Email support"],
+    demoUrl: "/audio/midnight-studio-demo.mp3"
   }
 ];
 
