@@ -12,7 +12,7 @@ export function generateMetadata({ params }: ProductPageProps) {
     return { title: "Product Not Found" };
   }
   return {
-    title: `${product.name} | Arctic Audio`,
+    title: product.name,
     description: product.description,
     openGraph: {
       title: product.name,
