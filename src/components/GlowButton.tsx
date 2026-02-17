@@ -2,10 +2,11 @@
 
 import Link from "next/link";
 import { motion } from "framer-motion";
+import { ReactNode } from "react";
 
 type GlowButtonProps = {
   href: string;
-  label: string;
+  label: string | ReactNode;
   variant?: "primary" | "secondary";
 };
 
