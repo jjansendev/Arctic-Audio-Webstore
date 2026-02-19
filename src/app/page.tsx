@@ -38,7 +38,7 @@ export default function HomePage() {
       </section>
 
       <section className="px-6 py-20 md:px-12">
-        <div className="mx-auto grid w-full max-w-6xl gap-10 md:grid-cols-[1.1fr_0.9fr]">
+        <div className="mx-auto w-full max-w-6xl">
           <div className="glass rounded-panel p-8">
             <h2 className="section-title">Sculpted for elite engineers</h2>
             <p className="mt-4 text-white/70">
@@ -59,20 +59,6 @@ export default function HomePage() {
                 Adaptive UI scaling for every studio display.
               </div>
             </div>
-          </div>
-          <div className="glass relative rounded-panel p-8">
-            <div className="absolute right-6 top-6 rounded-full border border-white/10 px-4 py-1 text-xs uppercase tracking-[0.3em] text-white/60">
-              Studio Bundle
-            </div>
-            <div className="mt-10 space-y-4">
-              <p className="text-2xl font-semibold">Midnight Studio Suite</p>
-              <p className="text-white/70">
-                A curated chain of Arctic Audio processors designed for mastering, cinematic stems, and
-                broadcast-ready tone.
-              </p>
-              <GlowButton href="/products/arctic-suite" label="View Details" />
-            </div>
-            <div className="mt-8 h-40 rounded-panel bg-gradient-to-br from-white/10 via-white/5 to-transparent shadow-soft" />
           </div>
         </div>
       </section>

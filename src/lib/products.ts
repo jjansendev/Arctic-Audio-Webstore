@@ -56,8 +56,8 @@ export const products: Product[] = [
     features: [
       "Dynamic EQ mode with sidechain",
       "Linear-phase & minimum-phase processing",
-      "Advanced psychoacoustic modellliung",
-      "Real-time analyzer clearly shows what the eq is doing",
+      "Advanced psychoacoustic modelling",
+      "Real-time analyzer clearly shows what the EQ is doing",
       "macOS & Windows - VST3, AU, AAX"
     ],
     category: "EQ",
