@@ -11,21 +11,11 @@ export type Product = {
   images: string[];
   audioDemoUrl: string;
   features: string[];
-  category: string;
-  tags: string[];
-  isNew: boolean;
-  isFeatured: boolean;
-  variants: Array<{
-    id: string;
-    name: string;
-    price: number;
-  }>;
-  systemRequirements: {
-    os: string[];
-    formats: string[];
-    cpu: string;
-    ram: string;
-  };
+  system: string[];
+  license: string[];
+  demoUrl?: string;
+  isBundle?: boolean;
+  bundleProducts?: string[]; // slugs of products in bundle
 };
 
 export const products: Product[] = [
@@ -84,26 +74,62 @@ export const products: Product[] = [
       "/products/arctic-limit-interface.webp",
       "/products/arctic-limit-metering.webp"
     ],
-    audioDemoUrl: "/demos/arctic-limit-before-after.mp3",
+    system: ["macOS 12+", "Windows 10+", "VST3 / AU / AAX"],
+    license: ["Single-user perpetual", "Offline license file"],
+    demoUrl: "/audio/frost-limiter-demo.mp3"
+  },
+  {
+    name: "Tundra Stereo",
+    slug: "tundra-stereo",
+    description: "Precision stereo imaging with mid-side processing and width control.",
+    price: 139,
+    category: "Stereo",
     features: [
-      "True peak & inter-sample peak limiting",
-      "Adaptive intelligent release",
-      "Up to 64x linear-phase oversampling",
-      "Ceiling & threshold automation",
-      "Comprehensive loudness & peak metering",
-      "macOS & Windows - VST3, AU, AAX"
+      "Advanced mid-side processing",
+      "Stereo width analyzer",
+      "Phase correlation metering",
+      "Mono compatibility check"
     ],
-    category: "Limiter",
-    tags: ["limiter", "mastering", "brickwall", "true-peak", "loudness"],
-    isNew: true,
-    isFeatured: true,
-    variants: [{ id: "full-license", name: "Full License", price: 11900 }],
-    systemRequirements: {
-      os: ["Windows 10+", "macOS 11+"],
-      formats: ["VST3", "AU", "AAX"],
-      cpu: "Intel/Apple Silicon",
-      ram: "4 GB minimum, 8 GB recommended"
-    }
+    system: ["macOS 12+", "Windows 10+", "VST3 / AU / AAX"],
+    license: ["Single-user perpetual", "2 activations"],
+    demoUrl: "/audio/tundra-stereo-demo.mp3"
+  },
+  {
+    name: "Arctic Suite",
+    slug: "arctic-suite",
+    description: "Complete mastering chain with all Arctic Audio processors.",
+    price: 599,
+    category: "Bundle",
+    isBundle: true,
+    bundleProducts: ["arctic-echo", "glacier-reverb", "polar-dynamics", "aurora-eq", "frost-limiter", "tundra-stereo"],
+    features: [
+      "All 6 Arctic Audio plugins",
+      "Unified preset system",
+      "Advanced metering suite",
+      "Cross-plugin recall",
+      "Priority support included"
+    ],
+    system: ["macOS 12+", "Windows 10+", "VST3 / AU / AAX"],
+    license: ["Single-user perpetual", "Priority support"],
+    demoUrl: "/audio/arctic-suite-demo.mp3"
+  },
+  {
+    name: "Midnight Studio Bundle",
+    slug: "midnight-studio-bundle",
+    description: "Essential mixing trio for pristine clarity and depth.",
+    price: 349,
+    category: "Bundle",
+    isBundle: true,
+    bundleProducts: ["aurora-eq", "polar-dynamics", "glacier-reverb"],
+    features: [
+      "Aurora EQ + Polar Dynamics + Glacier Reverb",
+      "Integrated workflow presets",
+      "Save 25% vs individual purchase",
+      "Lifetime updates"
+    ],
+    system: ["macOS 12+", "Windows 10+", "VST3 / AU / AAX"],
+    license: ["Single-user perpetual", "Email support"],
+    demoUrl: "/audio/midnight-studio-demo.mp3"
   }
 ];
 

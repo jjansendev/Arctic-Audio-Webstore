@@ -9,7 +9,7 @@ export const metadata: Metadata = {
     template: "%s | Arctic Audio"
   },
   description: "Premium boutique VST plugins engineered for pristine clarity and musical depth.",
-  metadataBase: new URL("https://arcticaudio.example"),
+  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || "https://arcticaudio.example"),
   openGraph: {
     title: "Arctic Audio",
     description: "Precision in Every Frequency.",

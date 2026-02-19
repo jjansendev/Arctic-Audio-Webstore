@@ -1,10 +1,6 @@
 import GlowButton from "@/components/GlowButton";
 import { products } from "@/lib/products";
 
-export const metadata = {
-  title: "Checkout"
-};
-
 const item = products[0];
 
 export default function CheckoutPage() {

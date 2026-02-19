@@ -1,9 +1,5 @@
 import GlowButton from "@/components/GlowButton";
 
-export const metadata = {
-  title: "Account"
-};
-
 export default function AccountPage() {
   return (
     <section className="px-6 py-16 md:px-12">
