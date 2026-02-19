@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Plugins — Arctic Audio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  https://fonts.gstatic.com
+  <link href="https://fonts.googleapismily=Inter:wght@300;400;600;800&display=swap
+  ./ui.css
+</head>
+<body>
+  <header id="site-header" class="site-header"></header>
+
+  <main class="shell">
+    <header class="section-head mt-16">
+      <div>
+        <h1 class="h2">Plugins</h1>
+        <p class="muted">Boutique DSP for critical listening and modern workflows.</p>
+      </div>
+    </header>
+
+    <!-- Controls -->
+    <section class="controls glass mt-8" aria-label="Product filters">
+      <div class="controls__row">
+        <label class="sr-only" for="search">Search</label>
+        <input id="search" class="input" type="search" placeholder="Search plugins…" autocomplete="off" />
+
+        <label class="sr-only" for="category">Category</label>
+        <select id="category" class="select">
+          <option value="">All Categories</option>
+        </select>
+
+        <label class="sr-only" for="sort">Sort</label>
+        <select id="sort" class="select">
+          <option value="name-asc">Name (A→Z)</option>
+          <option value="name-desc">Name (Z→A)</option>
+          <option value="price-asc">Price (Low→High)</option>
+          <option value="price-desc">Price (High→Low)</option>
+        </select>
+      </div>
+    </section>
+
+    <!-- Grid -->
+    <section class="mt-8">
+      <div id="products-grid" class="product-grid"></div>
+      <p id="empty-state" class="muted mt-12" hidden>No plugins match your filters.</p>
+    </section>
+  </main>
+
+  <footer id="site-footer" class="site-footer"></footer>
+  <div id="toast-root" class="toast-root" aria-live="polite" aria-atomic="true"></div>
+
+  <script type="module">
+    import { loadHeader } from './components/header.js';
+    import { loadFooter } from './components/footer.js';
+    import { products } from './data/products.js';
+    import { renderProductCard } from './components/productCard.js';
+
+    loadHeader();
+    loadFooter();
+
+    const $ = (s, r = document) => r.querySelector(s);
+    const $$ = (s, r = document) => [...r.querySelectorAll(s)];
+
+    const grid = $('#products-grid');
+    const empty = $('#empty-state');
+    const search = $('#search');
+    const catSel = $('#category');
+    const sortSel = $('#sort');
+
+    // Populate category select from data
+    const categories = new Set();
+    products.forEach(p => p.categories.forEach(c => categories.add(c)));
+    [...categories].sort().forEach(c => {
+      const op = document.createElement('option');
+      op.value = c; op.textContent = c;
+      catSel.appendChild(op);
+    });
+
+    function applyFilters() {
+      const q = search.value.trim().toLowerCase();
+      const cat = catSel.value;
+      const sort = sortSel.value;
+
+      let list = products.filter(p => {
+        const matchesQ = !q || (p.name.toLowerCase().includes(q) || p.shortDescription.toLowerCase().includes(q));
+        const matchesCat = !cat || p.categories.includes(cat);
+        return matchesQ && matchesCat;
+      });
+
+      switch (sort) {
+        case 'name-asc':  list.sort((a,b)=>a.name.localeCompare(b.name)); break;
+        case 'name-desc': list.sort((a,b)=>b.name.localeCompare(a.name)); break;
+        case 'price-asc': list.sort((a,b)=>a.priceCents-b.priceCents); break;
+        case 'price-desc':list.sort((a,b)=>b.priceCents-a.priceCents); break;
+      }
+
+      grid.innerHTML = '';
+      list.forEach(p => grid.appendChild(renderProductCard(p, { showAdd: true })));
+
+      empty.hidden = list.length !== 0;
+    }
+
+    [search, catSel, sortSel].forEach(el => el.addEventListener('input', applyFilters));
+    applyFilters();
+  </script>
+</body>
+</html>

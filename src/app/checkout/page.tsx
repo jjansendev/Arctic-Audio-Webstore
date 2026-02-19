@@ -1,5 +1,3 @@
-"use client";
-
 import GlowButton from "@/components/GlowButton";
 import { products } from "@/lib/products";
 
