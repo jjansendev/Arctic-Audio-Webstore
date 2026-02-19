@@ -6,12 +6,8 @@ export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
 }
 
-export function formatPrice(cents: number, currency = "USD"): string {
-  const formatter = new Intl.NumberFormat("en-US", {
-    style: "currency",
-    currency,
-  });
-  return formatter.format(cents / 100);
+export function formatPrice(cents: number, currency = "CAD"): string {
+  return `${(cents / 100).toFixed(2)} ${currency}`;
 }
 
 export function generateLicenseKey(): string {

@@ -61,11 +61,11 @@ export default function AccountPage() {
             <div className="mt-4 space-y-3 text-sm text-white/70">
               <div className="flex items-center justify-between">
                 <span>Jan 18, 2026 · Arctic Suite</span>
-                <span>$399</span>
+                <span>399.00 CAD</span>
               </div>
               <div className="flex items-center justify-between">
                 <span>Dec 02, 2025 · Glacier Reverb</span>
-                <span>$179</span>
+                <span>179.00 CAD</span>
               </div>
             </div>
           </div>

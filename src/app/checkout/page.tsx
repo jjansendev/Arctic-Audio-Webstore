@@ -1,5 +1,6 @@
 import GlowButton from "@/components/GlowButton";
 import { products } from "@/lib/products";
+import { formatPrice } from "@/lib/utils";
 
 const item = products[0];
 
@@ -53,7 +54,7 @@ export default function CheckoutPage() {
             <h2 className="text-xl font-semibold">Order Summary</h2>
             <div className="mt-4 flex items-center justify-between text-sm">
               <span>{item.name}</span>
-              <span>${item.price}</span>
+              <span>{formatPrice(item.price, item.currency ?? "CAD")}</span>
             </div>
             <div className="mt-2 flex items-center justify-between text-sm text-white/60">
               <span>VAT / Tax</span>
@@ -61,7 +62,7 @@ export default function CheckoutPage() {
             </div>
             <div className="mt-4 flex items-center justify-between text-base font-semibold">
               <span>Total</span>
-              <span>${item.price}</span>
+              <span>{formatPrice(item.price, item.currency ?? "CAD")}</span>
             </div>
           </div>
           <div className="glass rounded-panel p-6">

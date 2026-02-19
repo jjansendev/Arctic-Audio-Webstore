@@ -1,5 +1,6 @@
 import Link from "next/link";
 import type { Product } from "@/lib/products";
+import { formatPrice } from "@/lib/utils";
 
 type ProductCardProps = {
   product: Product;
@@ -15,7 +16,9 @@ export default function ProductCard({ product }: ProductCardProps) {
         <h3 className="text-xl font-semibold">{product.name}</h3>
         <p className="text-sm text-white/70">{product.description}</p>
         <div className="flex items-center justify-between">
-          <span className="text-lg font-semibold text-arctic-cyan">${product.price}</span>
+          <span className="text-lg font-semibold text-arctic-cyan">
+            {formatPrice(product.price, product.currency ?? "CAD")}
+          </span>
           <Link
             href={`/products/${product.slug}`}
             className="text-xs uppercase tracking-[0.3em] text-white/70 transition group-hover:text-arctic-cyan"

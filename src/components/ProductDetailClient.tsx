@@ -8,6 +8,7 @@ import AudioPlayer from "@/components/AudioPlayer";
 import RelatedProducts from "@/components/RelatedProducts";
 import type { Product } from "@/lib/products";
 import { productMap } from "@/lib/products";
+import { formatPrice } from "@/lib/utils";
 
 type ProductDetailClientProps = {
   product: Product;
@@ -50,7 +51,9 @@ export default function ProductDetailClient({ product }: ProductDetailClientProp
                 <p className="text-lg text-white/80 md:text-xl">{product.description}</p>
                 
                 <div className="flex flex-wrap items-center gap-4">
-                  <div className="text-4xl font-bold text-arctic-cyan">${product.price}</div>
+                  <div className="text-4xl font-bold text-arctic-cyan">
+                    {formatPrice(product.price, product.currency ?? "CAD")}
+                  </div>
                   {product.isBundle && (
                     <div className="rounded-full bg-gradient-to-r from-arctic-cyan/20 to-arctic-frost/10 px-4 py-1 text-sm font-semibold text-arctic-cyan">
                       Bundle • Save 25%
