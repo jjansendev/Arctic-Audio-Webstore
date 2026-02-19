@@ -30,7 +30,7 @@ export default function AccountPage() {
             <h2 className="text-xl font-semibold">Licenses</h2>
             <div className="mt-4 space-y-3 text-sm text-white/70">
               <div className="flex items-center justify-between">
-                <span>Arctic Echo</span>
+                <span>Glacial Echo</span>
                 <span className="text-arctic-cyan">AAE5N-7XK2P-Q8Z1M</span>
               </div>
               <div className="flex items-center justify-between">
@@ -43,7 +43,7 @@ export default function AccountPage() {
             <h2 className="text-xl font-semibold">Downloads</h2>
             <div className="mt-4 space-y-3 text-sm text-white/70">
               <div className="flex items-center justify-between">
-                <span>Arctic Suite Installer</span>
+                <span>Glacial Suite Installer</span>
                 <button className="text-xs uppercase tracking-[0.3em] text-white/60 transition hover:text-white">
                   Download
                 </button>
@@ -60,7 +60,7 @@ export default function AccountPage() {
             <h2 className="text-xl font-semibold">Order History</h2>
             <div className="mt-4 space-y-3 text-sm text-white/70">
               <div className="flex items-center justify-between">
-                <span>Jan 18, 2026 · Arctic Suite</span>
+                <span>Jan 18, 2026 · Glacial Suite</span>
                 <span>399.00 CAD</span>
               </div>
               <div className="flex items-center justify-between">

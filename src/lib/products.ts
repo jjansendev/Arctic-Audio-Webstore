@@ -35,14 +35,14 @@ export type Product = {
 
 export const products: Product[] = [
   {
-    id: "arctic-eq",
-    slug: "arctic-eq",
-    name: "Arctic EQ",
-    tagline: "Precision Parametric Equalizer with Arctic Clarity",
+    id: "glacial-eq",
+    slug: "glacial-eq",
+    name: "Glacial EQ",
+    tagline: "Precision Parametric Equalizer with Glacial Clarity",
     description:
       "Surgical EQ tool featuring dynamic bands, linear-phase processing, and smooth analog-style modeling for transparent yet musical results.",
     longDescription:
-      "Arctic EQ delivers surgical precision with musical character. Eight fully parametric bands, dynamic EQ capabilities, linear-phase and zero-latency modes, plus comprehensive metering and A/B comparison.",
+      "Glacial EQ delivers surgical precision with musical character. Eight fully parametric bands, dynamic EQ capabilities, linear-phase and zero-latency modes, plus comprehensive metering and A/B comparison.",
     price: 15900,
     compareAtPrice: null,
     currency: "CAD",
@@ -76,14 +76,14 @@ export const products: Product[] = [
     demoUrl: "/demos/arctic-eq-demo.mp3"
   },
   {
-    id: "arctic-limit",
-    slug: "arctic-limit",
-    name: "Arctic Limit",
+    id: "glacial-limit",
+    slug: "glacial-limit",
+    name: "Glacial Limit",
     tagline: "Transparent Brickwall Limiter with True Peak Control",
     description:
       "Protect your masters with precision limiting, inter-sample peak detection, and high-quality oversampling - crystal clear and ice-cold.",
     longDescription:
-      "Arctic Limit combines transparency with aggressive control. True-peak limiting, adaptive release, up to 16x oversampling, ISP detection, and detailed metering make it ideal for modern loudness standards.",
+      "Glacial Limit combines transparency with aggressive control. True-peak limiting, adaptive release, up to 16x oversampling, ISP detection, and detailed metering make it ideal for modern loudness standards.",
     price: 11900,
     compareAtPrice: 14900,
     currency: "CAD",
