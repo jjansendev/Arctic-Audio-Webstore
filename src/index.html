@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Arctic Audio — Precision in Every Frequency</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Premium professional audio VST plugins with surgical control and pristine sound." />
+  https://fonts.gstatic.com
+  <!-- Optional webfont (works offline with system font fallback) -->
+  https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap
+  ./ui.css
+</head>
+<body>
+  <!-- Header (injected by components/header.js) -->
+  <header id="site-header" class="site-header"></header>
+
+  <main id="content" class="shell">
+    <!-- Hero -->
+    <section class="hero">
+      <div class="hero__overlay"></div>
+      <div class="hero__inner">
+        <div class="hero__brand">
+          <span class="logo-mark" aria-hidden="true"></span>
+          <h1 class="hero__title">ARCTIC AUDIO</h1>
+        </div>
+        <p class="hero__tag">Precision in Every Frequency.</p>
+        <div class="hero__ctas">
+          ./products.htmlExplore Plugins</a>
+          #demosListen to Demos</a>
+        </div>
+      </div>
+      <!-- Subtle animated waveform -->
+      <div class="hero__wave" aria-hidden="true">
+        <div class="wave-pattern"></div>
+      </div>
+    </section>
+
+    <!-- Three value pillars -->
+    <section class="grid-3 mt-24" id="demos">
+      <article class="card glass">
+        <p class="eyebrow">Master</p>
+        <h3 class="card__title">Surgical Clarity</h3>
+        <p class="muted">Linear‑phase processing with zero smear. Perfect for mastering.</p>
+      </article>
+      <article class="card glass">
+        <p class="eyebrow">Mix</p>
+        <h3 class="card__title">Musical Dynamics</h3>
+        <p class="muted">Adaptive compression with spectral awareness to stay transparent.</p>
+      </article>
+      <article class="card glass">
+        <p class="eyebrow">Stereo</p>
+        <h3 class="card__title">Mono‑Safe Width</h3>
+        <p class="muted">Wide yet mono‑compatible imaging for confident translation.</p>
+      </article>
+    </section>
+
+    <!-- Featured products (first 3) -->
+    <section class="mt-28">
+      <div class="section-head">
+        <h2 class="h2">Featured Plugins</h2>
+        ./products.htmlView all →</a>
+      </div>
+      <div id="featured-grid" class="product-grid"></div>
+    </section>
+  </main>
+
+  <!-- Footer (injected by components/footer.js) -->
+  <footer id="site-footer" class="site-footer"></footer>
+
+  <!-- Toast container -->
+  <div id="toast-root" class="toast-root" aria-live="polite" aria-atomic="true"></div>
+
+  <!-- Scripts -->
+  <script type="module">
+    import { loadHeader } from './components/header.js';
+    import { loadFooter } from './components/footer.js';
+    import { products } from './data/products.js';
+    import { renderProductCard } from './components/productCard.js';
+    import { App } from './app.js';
+
+    loadHeader();
+    loadFooter();
+
+    // Render first 3 featured products
+    const target = document.getElementById('featured-grid');
+    products.slice(0, 3).forEach(p => {
+      target.appendChild(renderProductCard(p, { showAdd: true }));
+    });
+
+    // CTA keyboard focus helper
+    document.querySelectorAll('.btn').forEach(btn => {
+      btn.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') e.currentTarget.click();
+      });
+    });
+
+    // Example: announce that the page is ready
+    App.debug && console.log('[ArcticAudio] Landing ready');
+  </script>
+</body>
+</html>
