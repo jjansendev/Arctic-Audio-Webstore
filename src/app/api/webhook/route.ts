@@ -74,7 +74,7 @@ export async function POST(request: NextRequest) {
       // await resend.emails.send({
       //   from: process.env.RESEND_FROM_EMAIL,
       //   to: email,
-      //   subject: 'Your Arctic Audio Order',
+      //   subject: 'Your Glacial Audio Order',
       //   html: `Your order ${session.id} is confirmed. License: ${licenseKey}`
       // });
     }

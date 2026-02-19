@@ -6,11 +6,11 @@ import GlowButton from "@/components/GlowButton";
 const faqs = [
   {
     question: "What formats are supported?",
-    answer: "All Arctic Audio plugins are available in VST3, AU (Audio Units), and AAX formats for maximum compatibility with your DAW."
+    answer: "All Glacial Audio plugins are available in VST3, AU (Audio Units), and AAX formats for maximum compatibility with your DAW."
   },
   {
     question: "What are the system requirements?",
-    answer: "Arctic Audio plugins require macOS 12+ or Windows 10+ (64-bit). An iLok account is not required - we use simple email-based licensing."
+    answer: "Glacial Audio plugins require macOS 12+ or Windows 10+ (64-bit). An iLok account is not required - we use simple email-based licensing."
   },
   {
     question: "How does licensing work?",
@@ -33,7 +33,7 @@ const faqs = [
     answer: "We accept all major credit cards, debit cards, and various local payment methods through our secure Stripe integration."
   },
   {
-    question: "Can I use Arctic Audio plugins commercially?",
+    question: "Can I use Glacial Audio plugins commercially?",
     answer: "Absolutely! All licenses include full commercial use rights for music production, sound design, broadcasting, and more."
   }
 ];

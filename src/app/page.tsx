@@ -19,8 +19,8 @@ export default function HomePage() {
         />
         <div className="mx-auto flex w-full max-w-6xl flex-col gap-10">
           <div className="flex flex-col gap-6">
-            <p className="text-xs uppercase tracking-[0.5em] text-arctic-cyan">Arctic Audio</p>
-            <h1 className="text-4xl font-semibold tracking-tight md:text-6xl">ARCTIC AUDIO</h1>
+            <p className="text-xs uppercase tracking-[0.5em] text-arctic-cyan">Glacial Audio</p>
+            <h1 className="text-4xl font-semibold tracking-tight md:text-6xl">GLACIAL AUDIO</h1>
             <p className="max-w-2xl text-lg text-white/80 md:text-xl">
               Precision in Every Frequency.
             </p>
@@ -42,7 +42,7 @@ export default function HomePage() {
           <div className="glass rounded-panel p-8">
             <h2 className="section-title">Sculpted for elite engineers</h2>
             <p className="mt-4 text-white/70">
-              Arctic Audio plugins combine surgical control with musical warmth. Every processor is tuned
+              Glacial Audio plugins combine surgical control with musical warmth. Every processor is tuned
               for modern studios, immersive mixes, and cinematic clarity.
             </p>
             <div className="mt-6 grid gap-4 text-sm text-white/70">
