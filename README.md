@@ -1,12 +1,12 @@
-# Arctic Audio Webstore
+# Glacial Audio Webstore
 
-Premium boutique webstore for professional audio VST plugins. Built with Next.js App Router, TypeScript, Tailwind CSS, and featuring the distinctive **Midnight Arctic Gradient** theme.
+Premium boutique webstore for professional audio VST plugins. Built with Next.js App Router, TypeScript, Tailwind CSS, and featuring the distinctive **Midnight Glacial Gradient** theme.
 
 ![Homepage](https://github.com/user-attachments/assets/25671209-5f67-44cb-8eb2-df3fe69816b9)
 
 ## Features
 
-- ✨ **Premium Arctic Theme** - Midnight Arctic Gradient design with glass morphism effects
+- ✨ **Premium Glacial Theme** - Midnight Glacial Gradient design with glass morphism effects
 - 🛍️ **Complete Shop** - Product catalog with 8 plugins (6 individual + 2 bundles)
 - 🔍 **Advanced Filters** - Search, category filtering, and sorting
 - 💳 **Stripe Integration** - Secure checkout with webhook fulfillment
@@ -20,7 +20,7 @@ Premium boutique webstore for professional audio VST plugins. Built with Next.js
 
 - **Framework:** Next.js 14 (App Router)
 - **Language:** TypeScript
-- **Styling:** Tailwind CSS + Custom Arctic theme
+- **Styling:** Tailwind CSS + Custom Glacial theme
 - **Database:** PostgreSQL with Prisma ORM
 - **Payments:** Stripe Checkout + Webhooks
 - **Email:** Resend (for order confirmations)
@@ -57,7 +57,7 @@ cp .env.example .env.local
 Edit `.env.local` with your actual credentials:
 ```env
 # Database
-DATABASE_URL="postgresql://user:password@localhost:5432/arctic_audio?schema=public"
+DATABASE_URL="postgresql://user:password@localhost:5432/glacial_audio?schema=public"
 
 # Stripe
 STRIPE_SECRET_KEY="sk_test_your_stripe_secret_key_here"
@@ -207,7 +207,7 @@ Creates a Stripe Checkout session.
 **Request:**
 ```json
 {
-  "productSlugs": ["arctic-echo", "glacier-reverb"]
+  "productSlugs": ["glacial-eq", "glacial-limit"]
 }
 ```
 
@@ -284,7 +284,7 @@ stripe listen --forward-to localhost:3000/api/webhook
 
 ## Theme Customization
 
-The **Midnight Arctic Gradient** theme is defined in:
+The **Midnight Glacial Gradient** theme is defined in:
 - `src/app/globals.css` - Global styles and CSS custom properties
 - `tailwind.config.ts` - Tailwind theme extensions
 
@@ -300,7 +300,7 @@ Key design tokens:
 Current products (8 total):
 
 **Individual Plugins (6):**
-1. Arctic Echo - Stereo Delay ($149)
+1. Glacial Echo - Stereo Delay ($149)
 2. Glacier Reverb - Reverb ($179)
 3. Polar Dynamics - Compressor ($129)
 4. Aurora EQ - Equalizer ($159)
@@ -308,7 +308,7 @@ Current products (8 total):
 6. Tundra Stereo - Stereo Imaging ($139)
 
 **Bundles (2):**
-1. Arctic Suite - All 6 plugins ($599) - Save 33%
+1. Glacial Suite - All 6 plugins ($599) - Save 33%
 2. Midnight Studio Bundle - EQ + Dynamics + Reverb ($349) - Save 25%
 
 To modify products, edit `src/lib/products.ts`.
@@ -373,4 +373,4 @@ For questions or issues:
 
 ---
 
-Built with ❄️ by the Arctic Audio team
+Built with ❄️ by the Glacial Audio team

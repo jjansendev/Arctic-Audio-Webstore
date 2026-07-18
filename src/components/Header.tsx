@@ -5,7 +5,7 @@ export default function Header() {
     <header className="relative z-20 px-6 py-6 md:px-12">
       <div className="mx-auto flex w-full max-w-6xl items-center justify-between">
         <Link href="/" className="text-xs uppercase tracking-[0.5em] text-white/80">
-          ARCTIC AUDIO
+          GLACIAL AUDIO
         </Link>
         <nav className="hidden items-center gap-8 text-xs uppercase tracking-[0.3em] text-white/60 md:flex">
           <Link href="/shop" className="transition hover:text-white">

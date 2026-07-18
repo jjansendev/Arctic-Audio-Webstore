@@ -6,6 +6,6 @@ export async function POST(request: Request) {
   const email = typeof body.email === "string" ? body.email : "";
 
   return NextResponse.json({
-    license: generateLicenseKey(email || "ARCTICAUDIO")
+      license: generateLicenseKey(email || "GLACIALAUDIO")
   });
 }

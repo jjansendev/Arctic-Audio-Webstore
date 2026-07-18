@@ -11,7 +11,7 @@ export default function ProductsPage() {
       <div className="mx-auto w-full max-w-6xl">
         <div className="mb-10 space-y-4">
           <p className="text-xs uppercase tracking-[0.5em] text-white/50">Plugins</p>
-          <h1 className="text-3xl font-semibold md:text-5xl">Explore the Arctic Series</h1>
+          <h1 className="text-3xl font-semibold md:text-5xl">Explore the Glacial Series</h1>
           <p className="max-w-2xl text-white/70">
             Boutique processors engineered for clarity, depth, and uncompromising control.
           </p>

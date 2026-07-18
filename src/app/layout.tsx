@@ -5,13 +5,13 @@ import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
   title: {
-    default: "Arctic Audio | Precision in Every Frequency",
-    template: "%s | Arctic Audio"
+    default: "Glacial Audio | Precision in Every Frequency",
+    template: "%s | Glacial Audio"
   },
   description: "Premium boutique VST plugins engineered for pristine clarity and musical depth.",
   metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || "https://arcticaudio.example"),
   openGraph: {
-    title: "Arctic Audio",
+    title: "Glacial Audio",
     description: "Precision in Every Frequency.",
     type: "website"
   }
